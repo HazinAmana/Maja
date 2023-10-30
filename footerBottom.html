@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ensure the footer is always at the bottom of the page</title>
+  <style>
+    /* ********** Using Flexbox ********** */
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+
+    h1 {
+      background-color: rgb(223, 239, 255);
+    }
+
+    footer {
+      background-color: rgb(195, 211, 107);
+    }
+
+    /* ********** Using Grid ********** */
+    /* body {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+    h1 {
+      background-color: rgb(223, 255, 223);
+    }
+    footer {
+      background-color: rgb(219, 219, 219);
+    } */
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- Main content -->
+    <h1>Zut!</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ducimus
+      distinctio, nobis iusto velit repellat. Reiciendis explicabo suscipit
+      obcaecati corrupti.</p>
+  </main>
+  <footer>
+    <!-- Footer content -->
+    <ul>
+      <li>Link1</li>
+      <li>Link2</li>
+      <li>Link3</li>
+    </ul>
+  </footer>
+</body>
+
+</html>
