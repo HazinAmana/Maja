@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test</title>
+  <style>
+    /* ********************* Custom checkbox ************* */
+    .checkbox-symbol {
+      position: absolute;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .checkbox-container {
+      box-sizing: border-box;
+      background: #ececec;
+      color: #222;
+      height: 64px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: row wrap;
+    }
+
+    .checkbox-container * {
+      box-sizing: border-box;
+    }
+
+    .checkbox-input {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .checkbox {
+      user-select: none;
+      cursor: pointer;
+      padding: 6px 8px;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+    }
+
+    .checkbox:not(:last-child) {
+      margin-right: 6px;
+    }
+
+    .checkbox:hover {
+      background: rgba(0, 119, 255, 0.06);
+    }
+
+    .checkbox span {
+      vertical-align: middle;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .checkbox span:first-child {
+      position: relative;
+      flex: 0 0 18px;
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      transform: scale(1);
+      border: 1px solid #cccfdb;
+      transition: all 0.3s ease;
+    }
+
+    .checkbox span:first-child svg {
+      position: absolute;
+      top: 3px;
+      left: 2px;
+      fill: none;
+      stroke: #fff;
+      stroke-dasharray: 16px;
+      stroke-dashoffset: 16px;
+      transition: all 0.3s ease;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .checkbox span:last-child {
+      padding-left: 8px;
+      line-height: 18px;
+    }
+
+    .checkbox:hover span:first-child {
+      border-color: #0077ff;
+    }
+
+    .checkbox-input:checked+.checkbox span:first-child {
+      background: #0077ff;
+      border-color: #0077ff;
+      animation: zoom-in-out 0.3s ease;
+    }
+
+    .checkbox-input:checked+.checkbox span:first-child svg {
+      stroke-dashoffset: 0;
+    }
+
+    @keyframes zoom-in-out {
+      50% {
+        transform: scale(0.9);
+      }
+    }
+
+    /* ****************** Custom Sélection ************************ */
+    ::selection {
+      background: aquamarine;
+      color: black;
+    }
+
+    .custom-text-selection::selection {
+      background: deeppink;
+      color: white;
+    }
+
+    /* **************** List with floating section headings ************************** */
+    .container {
+      display: grid;
+      place-items: center;
+      min-height: 400px;
+    }
+
+    .floating-stack {
+      background: #455A64;
+      color: #fff;
+      height: 80vh;
+      width: 320px;
+      border-radius: 1rem;
+      overflow-y: auto;
+    }
+
+    .floating-stack>dl {
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      align-items: center;
+    }
+
+    .floating-stack dt {
+      position: sticky;
+      top: 0.5rem;
+      left: 0.5rem;
+      font-weight: bold;
+      background: #263238;
+      color: #cfd8dc;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 50%;
+      padding: 0.25rem 1rem;
+      grid-column: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .floating-stack dd {
+      grid-column: 2;
+      margin: 0;
+      padding: 0.75rem;
+    }
+
+    .floating-stack>dl:first-of-type>dd:first-of-type {
+      margin-top: 0.25rem;
+    }
+
+    /* ******************  Mouse cursor gradient tracking ************************* */
+    .mouse-cursor-gradient-tracking {
+      position: relative;
+      background: #7983ff;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      border: none;
+      color: white;
+      cursor: pointer;
+      outline: none;
+      overflow: hidden;
+    }
+
+    .mouse-cursor-gradient-tracking span {
+      position: relative;
+    }
+
+    .mouse-cursor-gradient-tracking::before {
+      --size: 0;
+      content: '';
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: var(--size);
+      height: var(--size);
+      background: radial-gradient(circle closest-side, pink, transparent);
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease;
+    }
+
+    .mouse-cursor-gradient-tracking:hover::before {
+      --size: 200px;
+    }
+
+    /*  **************************************************** */
+  </style>
+</head>
+
+<body>
+  <h1>Test</h1>
+
+  <!-- ******************************* Custom Sélection **************************** -->
+  <p>Select some of this text.</p>
+  <p class="custom-text-selection">Select some of this text.</p>
+
+  <!-- ******************************* Custom checkbox **************************** -->
+  <svg class="checkbox-symbol">
+    <symbol id="check" viewbox="0 0 12 10">
+      <polyline points="1.5 6 4.5 9 10.5 1" stroke-linecap="round"
+        stroke-linejoin="round" stroke-width="2"></polyline>
+    </symbol>
+  </svg>
+
+  <div class="checkbox-container">
+    <input class="checkbox-input" id="apples" type="checkbox" />
+    <label class="checkbox" for="apples">
+      <span>
+        <svg width="12px" height="10px">
+          <use xlink:href="#check"></use>
+        </svg>
+      </span>
+      <span>Apples</span>
+    </label>
+    <input class="checkbox-input" id="oranges" type="checkbox" />
+    <label class="checkbox" for="oranges">
+      <span>
+        <svg width="12px" height="10px">
+          <use xlink:href="#check"></use>
+        </svg>
+      </span>
+      <span>Oranges</span>
+    </label>
+  </div>
+  <br />
+  <!-- ********************* List with floating section headings ***************************** -->
+  <div class="container">
+    <div class="floating-stack">
+      <dl>
+        <dt>A</dt>
+        <dd>Algeria</dd>
+        <dd>Angola</dd>
+
+        <dt>B</dt>
+        <dd>Benin</dd>
+        <dd>Botswana</dd>
+        <dd>Burkina Faso</dd>
+        <dd>Burundi</dd>
+
+        <dt>C</dt>
+        <dd>Cabo Verde</dd>
+        <dd>Cameroon</dd>
+        <dd>Central African Republic</dd>
+        <dd>Chad</dd>
+        <dd>Comoros</dd>
+        <dd>Congo, Democratic Republic of the</dd>
+        <dd>Congo, Republic of the</dd>
+        <dd>Cote d'Ivoire</dd>
+
+        <dt>D</dt>
+        <dd>Djibouti</dd>
+        
+        <dt>E</dt>
+        <dd>Egypt</dd>
+        <dd>Equatorial Guinea</dd>
+        <dd>Eritrea</dd>
+        <dd>Eswatini (formerly Swaziland)</dd>
+        <dd>Ethiopia</dd>
+      </dl>
+    </div>
+  </div>
+  <br />
+  <!-- ************************* Mouse cursor gradient tracking ******************************** -->
+  <button class="mouse-cursor-gradient-tracking">
+    <span>Hover me - Mouse cursor gradient tracking</span>
+  </button>
+  <!--  ************************************************************* -->
+  <script>
+
+    // ********************* Mouse cursor gradient tracking *******************
+    let btn = document.querySelector('.mouse-cursor-gradient-tracking');
+    btn.addEventListener('mousemove', e => {
+      let rect = e.target.getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      let y = e.clientY - rect.top;
+      btn.style.setProperty('--x', x + 'px');
+      btn.style.setProperty('--y', y + 'px');
+    });
+  </script>
+</body>
+
+</html>
