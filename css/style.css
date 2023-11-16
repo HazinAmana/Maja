@@ -99,9 +99,10 @@ sup {
     "footer";
   width: 100%;
   height: 100vh;
-  grid-template-rows: 80px 1fr 80px;
+  grid-template-rows: 80px 1fr 40px;
 }
 
+/* ****************** HEADER ****************** */
 #page>header {
   grid-area: header;
   background-color: rgb(41, 41, 41);
@@ -115,6 +116,7 @@ sup {
 .logo span {
   font-weight: 200;
   font-size: 3rem;
+  color: hsl(0, 0%, 60%);
 }
 
 #page header nav ul {
@@ -147,15 +149,47 @@ a.middle:hover:before {
   transform: scaleX(1);
 }
 
+
+/* ****************** MAIN ****************** */
 #page>.main {
   grid-area: main;
   background-color: rgb(41, 41, 41);
   padding: 1rem 2rem;
 }
 
+section {
+  margin: 2rem auto;
+  border: 5px solid rgb(87, 87, 87);
+}
+
+.container {
+  display: flex;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.container img {
+  width: 30rem;
+}
+
+.container .contenu {
+  width: 30rem;
+  margin: 0 auto;
+}
+
+.contenu h2 {
+  margin-bottom: 2rem;
+}
+
+/* ****************** FOOETR ****************** */
 #page>footer {
   grid-area: footer;
   background-color: rgb(41, 41, 41);
   border-top: 1px solid rgb(121, 121, 121);
   padding: 1rem 2rem;
+  text-align: center;
+}
+
+footer span {
+  color: hsl(0, 0%, 60%);
 }
