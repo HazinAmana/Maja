@@ -177,8 +177,12 @@ section {
   margin: 0 auto;
 }
 
-.contenu h2 {
-  margin-bottom: 2rem;
+.contenu p {
+  margin: 2rem 0 3rem 0;
+}
+
+.contenu button {
+  padding: 0.2rem 1.2rem;
 }
 
 /* ****************** FOOETR ****************** */
@@ -188,6 +192,7 @@ section {
   border-top: 1px solid rgb(121, 121, 121);
   padding: 1rem 2rem;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 footer span {
