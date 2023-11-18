@@ -1,0 +1,92 @@
+/***************************** Wiwi Reset *****************************/
+
+/* :root{
+  --color-primary: hsl(0, 0%, 20%);
+  --color-secondary: hsl(0, 0%, 96%);
+  --color-accent: hsl(12, 100%, 50%);
+} */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  background-color: hsl(0, 0%, 96%);
+  color: hsl(0, 0%, 20%);
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/** Prevent `sub` and `sup` elements from affecting the line height in all browsers. */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+::selection {
+  background-color: hsl(150, 70%, 85%);
+}
+
+/************************* End of Wiwi Reset **************************/
