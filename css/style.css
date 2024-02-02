@@ -151,6 +151,19 @@ a.middle:hover:before {
 
 
 /* ****************** MAIN ****************** */
+
+/*
+
+Voir video de Kevin Powell (Challenge #5):
+
+"Flexbox or Grid challenge // which would you use to solve these?" du 02.01.2024
+
+https: //youtu.be/aKFB5Bjk6KM
+
+The 5 challenges: notion.so/kevinpowell/Flexbox-or-Grid-challenge-fbc13f2f145d47dc84d3be0593ec8b83
+
+*/
+
 #page>.main {
   grid-area: main;
   background-color: rgb(0, 0, 0);
